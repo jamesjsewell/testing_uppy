@@ -1,0 +1,18 @@
+.hello{
+    color: yellowgreen;
+    .world{
+        color: white;
+        box-shadow: 2rem 2rem;
+
+
+        background-color: lightblue;
+        animation-name: example;
+        animation-duration: 10s;
+
+        @keyframes example {
+            from {background-color: lightblue;}
+            to {background-color: lightgreen;}
+        }
+        
+    }
+}
