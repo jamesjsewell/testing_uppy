@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js -d",
     "build": "webpack --config webpack.prod.js",
-    "dev": "NODE_ENV=development node ./backend/server.js"
+    "dev": "NODE_ENV=development nodemon ./backend/server.js"
   },
   "author": "jamesjsewell",
   "license": "ISC",
@@ -37,10 +37,12 @@
     "postcss-nested": "^3.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "rimraf": "^2.6.2",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
     "sugarss": "^1.0.1",
     "uppy": "^0.25.0",
+    "uppy-server": "^0.12.1",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12",
     "webpack-dev-server": "^3.1.1",

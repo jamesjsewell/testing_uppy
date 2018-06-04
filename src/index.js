@@ -14,6 +14,8 @@ const Dashboard = require('uppy/lib/plugins/Dashboard')
 const AwsS3 = require('uppy/lib/plugins/AwsS3')
 const ms = require('ms')
 
+const Tus = require('uppy/lib/plugins/Tus')
+
 
 const uppy = Uppy({
   debug: true,
@@ -21,7 +23,7 @@ const uppy = Uppy({
   restrictions: {
     maxFileSize: 1000000,
     maxNumberOfFiles: 3,
-    minNumberOfFiles: 2,
+    minNumberOfFiles: 1,
     allowedFileTypes: ['image/*', 'video/*']
   }
 })
@@ -41,6 +43,11 @@ const uppy = Uppy({
   limit: 2,
   timeout: ms('1 minute'),
   host: 'http://localhost:3000'
+})
+
+uppy.on('upload-success', (file, data) => {
+  file.meta['key'] // the S3 object key of the uploaded file
+  console.log('what')
 })
 
 
