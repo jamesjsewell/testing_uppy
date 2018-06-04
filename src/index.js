@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import './style.scss';
 import Dashboard from 'uppy/lib/react/Dashboard';
-
+import './style.scss';
+import '..//node_modules/uppy/dist/uppy.css'
 
 
 const Uppy = require('uppy/lib/core')
@@ -14,7 +14,7 @@ const uppy = Uppy({
   debug: true,
   autoProceed: false,
   restrictions: {
-    maxFileSize: 1000000,
+    maxFileSize: 4000000,
     maxNumberOfFiles: 3,
     minNumberOfFiles: 1,
     allowedFileTypes: ['image/*', 'video/*']
@@ -60,41 +60,3 @@ const Index = () => {
 };
 
 ReactDOM.render(<Index />, document.getElementById("index"));
-
-
-
-// const Uppy = require('uppy/lib/core')
-// const Tus = require('uppy/lib/plugins/Tus')
-// const DragDrop = require('uppy/lib/react/DragDrop')
-
-// const uppy = Uppy({
-//   meta: { type: 'avatar' },
-//   restrictions: { maxNumberOfFiles: 1 },
-//   autoProceed: true
-// })
-
-// uppy.use(Tus, { endpoint: '/upload' })
-
-// uppy.on('complete', (result) => {
-//   const url = result.successful[0].uploadURL
-//   store.dispatch({
-//     type: SET_USER_AVATAR_URL,
-//     payload: { url: url }
-//   })
-// })
-
-// const AvatarPicker = ({ currentAvatar }) => {
-//   return (
-//     <div>
-//       <img src={currentAvatar} alt="Current Avatar" />
-//       <DragDrop
-//         uppy={uppy}
-//         locale={{
-//           strings: {
-//             chooseFile: 'Pick a new avatar'
-//           }
-//         }}
-//       />
-//     </div>
-//   )
-//}
