@@ -28,7 +28,6 @@ const uppy = Uppy({
 
 uppy.on('upload-success', (file, data) => {
   file.meta['key'] // the S3 object key of the uploaded file
-  console.log('what')
 })
 
 class UppyDashboardComponent extends React.Component {
